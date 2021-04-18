@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border">
+  <!-- Componente basico de ionic -->
+  <ion-toolbar>
+    
+<!-- 
+    <ion-buttons slot="start">
+      <ion-button color="primary" (click)="showMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-capitalize" color="primary">Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Body de la pagina -->
+
+  <ion-button expand="block"  color="primary" [routerLink]="['/alert']" routerLinkActive="router-link-active" mode="ios">
+    Alert
+  </ion-button>
+
+  <ion-button expand="block" mode="ios" color="secondary" [routerLink]="['/action-sheet']" routerLinkActive="router-link-active" >
+    Action-sheet
+  </ion-button>
+
+
+  <ion-list >
+    <ion-item *ngFor="let l of lists | async" [routerLink]="l.redirectTo" detail mode="ios">
+      <ion-icon name="{{l.icon}}" slot="start" color="primary"></ion-icon>
+      {{l.name}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>

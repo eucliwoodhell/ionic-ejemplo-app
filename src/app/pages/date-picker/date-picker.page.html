@@ -1,0 +1,65 @@
+<app-header text="Date Picker" like="no"></app-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-list-header>
+            <ion-label>Datos de Nacimiento</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>Fecha de Nacimiento</ion-label>
+            <ion-datetime 
+                            [value]="fechaNacimiento.toISOString()"
+                            displayFormat="DD/MM/YYYY"
+                            (ionChange)="cambioFecha($event)"></ion-datetime>
+        </ion-item>
+
+        <ion-list-header>
+            <ion-label>Restricciones</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>Min y Max</ion-label>
+            <ion-datetime 
+                            displayFormat="DD/MM/YYYY"
+                            min="2020-01-01"
+                            max="2020-12-31"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Años</ion-label>
+            <ion-datetime 
+                            displayFormat="YYYY"
+                            min="2020"
+                            max="2021"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>h:mm a</ion-label>
+            <ion-datetime displayFormat="h:mm a"></ion-datetime>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>hh:mm A </ion-label>
+            <ion-datetime displayFormat="h:mm A" minuteValues="0,15,30,45"></ion-datetime>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>Año y mes Personalizado</ion-label>
+            <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" monthValues="6,7,8" [yearValues]="customYearValues"></ion-datetime>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>Especificar dia/mes/año</ion-label>
+            <ion-datetime monthValues="6,7,8" yearValues="2014,2015" dayValues="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14" displayFormat="DD/MMM/YYYY"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Fecha Personalizada</ion-label>
+            <ion-datetime   [pickerOptions]="customDate"
+                            [yearValues]="customYearValues"></ion-datetime>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

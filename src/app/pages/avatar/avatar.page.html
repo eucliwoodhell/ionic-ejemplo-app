@@ -1,0 +1,21 @@
+<app-header text="Avatar"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-chip color="primary" mode="ios" outline="true" *ngFor="let item of [1,1,1,1,1,1,1,1]" >
+    <ion-avatar>
+      <img src="/assets/avatar/av.jpg" />
+    </ion-avatar>
+    <ion-label>Default</ion-label>
+  </ion-chip>
+
+  <ion-list>
+    <ion-item *ngFor="let item of [1,1,1,1,1]" color="primary">
+      <ion-avatar slot="start">
+        <img src="/assets/avatar/av.jpg" />
+      </ion-avatar>
+      <ion-label>Awesome Label</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

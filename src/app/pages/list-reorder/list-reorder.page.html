@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Atras" mode="ios" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">List-Reorder</ion-title>
+
+    <!-- Button  -->
+
+    <ion-buttons slot="end">
+      <ion-button text="Toggle" mode="ios" color="primary" (click)="toggleReorder()">Toggle</ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-reorder-group [disabled]="toggle"
+    (ionItemReorder)="doReorder ( $event )">
+
+      <ion-item *ngFor="let item of personajes let i = index" >
+        <ion-label>{{item}}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+
+  <ion-list-header>
+  </ion-list-header>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Icono</ion-label>
+    </ion-list-header>
+    <ion-reorder-group [disabled]="toggle"
+    (ionItemReorder)="doReorder ( $event )">
+      <ion-item *ngFor="let item of personajes let i = index" >
+        <ion-reorder slot="start"><ion-icon [name]="!toggle ? 'pizza' : 'barbell' "></ion-icon></ion-reorder>
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+
+</ion-content>

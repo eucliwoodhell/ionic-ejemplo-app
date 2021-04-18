@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Atras" mode="ios" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize" color="primary">{{titulo}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()" color="danger"  [hidden]="buttonLike(like)">
+        <ion-icon slot="icon-only" [name]=" favorite ? 'heart' : 'heart-outline' "></ion-icon>
+      </ion-button>
+      <ion-avatar item-left>
+        <!-- Imagen normal, cuando se recargue elemento rapido -->
+        <!-- <img src="/assets/avatar/av.jpg"> -->
+        <!-- Carga mediante lazyload bajo la demanda-->
+        <ion-img src="/assets/avatar/av.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+
+    
+  </ion-toolbar>
+</ion-header> 

@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Atras" mode="ios" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+  <!-- Default Searchbar -->
+  <ion-searchbar 
+  placeholder="Buscar albúm"
+  animated
+  inputmode="text"
+  (ionChange)="onSeachChange( $event )"
+  [debounce]="250"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list *ngFor="let album of (albums | async) | filtro: textSearch" >
+        <ion-item>
+            <ion-label>{{ album.title }}</ion-label>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

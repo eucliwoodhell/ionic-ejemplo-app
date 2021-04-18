@@ -1,0 +1,34 @@
+<app-header text="Grid"></app-header>
+
+<ion-content class="ion-padding" fullscreen>
+
+  <ion-grid fixed>
+    <ion-row>
+      <!-- Diferentes tamañanos de pantalla -->
+      <!-- fixed: tamaño de la pantalla -->
+      <!-- size-md : pantalla mediana -->
+      <!-- size-sm : pantalla pequeñas -->
+      <!-- size-xs : pantalla muy pequeñas -->
+      <ion-col 
+        size="12" size-lg="3" size-md="4" size-sm="6" 
+        *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]" >
+        <ion-card>
+          <ion-img src="assets/img/shurt.jpg"></ion-img>
+        </ion-card>
+        
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iusto, numquam labore possimus facilis porro aut deserunt aliquam repudiandae, voluptas quas. Cumque, praesentium autem! Iure odio id nulla beatae totam.
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+
+<app-footer titulo="Grid"></app-footer>
